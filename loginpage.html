@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <style>
+        /* Basic styling for demonstration */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        form {
+            max-width: 400px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input {
+            width: calc(100% - 20px);
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: #ff0000;
+            font-size: 0.8em;
+        }
+        #submit{
+            width:100px;
+            margin-left: 40%;
+
+        }
+    </style>
+</head>
+<body>
+    <form id="loginForm" onsubmit="return validateLoginForm()">
+        <h2>User Login</h2>
+        <label for="loginEmail">Email:</label><br>
+        <input type="email" id="loginEmail" name="loginEmail" required><br>
+        <span id="loginEmailError" class="error"></span><br>
+        
+        <label for="loginPassword">Password:</label><br>
+        <input type="password" id="loginPassword" name="loginPassword" required><br>
+        <span id="loginPasswordError" class="error"></span><br>
+        
+        <input id="submit"type="submit" value="Login">
+    </form>
+
+    <script>
+        // Function to validate login form and redirect on success
+        function validateLoginForm() {
+            let loginEmail = document.getElementById('loginEmail').value.trim();
+            let loginPassword = document.getElementById('loginPassword').value;
+
+            let isValid = true;
+
+            // Validate email
+            if (loginEmail === "") {
+                document.getElementById('loginEmailError').innerText = "Email is required";
+                isValid = false;
+            } else {
+                document.getElementById('loginEmailError').innerText = "";
+            }
+
+            // Validate password
+            if (loginPassword === "") {
+                document.getElementById('loginPasswordError').innerText = "Password is required";
+                isValid = false;
+            } else {
+                document.getElementById('loginPasswordError').innerText = "";
+            }
+
+            // Check if email and password match stored values in local storage
+            if (isValid) {
+                let storedEmail = localStorage.getItem('email');
+                let storedPassword = localStorage.getItem('password');
+
+                if (loginEmail !== storedEmail || loginPassword !== storedPassword) {
+                    document.getElementById('loginEmailError').innerText = "Invalid email or password";
+                    isValid = false;
+                }
+            }
+
+            if (isValid) {
+                alert("Login successful!");
+                // Redirect to Home.html after successful login
+                window.location.href = 'Home.html';
+            }
+
+            return false; // Prevent form submission for this demo
+        }
+    </script>
+</body>
+</html>

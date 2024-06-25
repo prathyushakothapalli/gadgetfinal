@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Cards</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            margin: 20px;
+            padding: 16px;
+            text-align: center;
+        }
+        .card img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .card h1 {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .card h2 {
+            font-size: 1em;
+            color: #555;
+            margin: 10px 0;
+        }
+        .card button {
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-bar">
+        <a href="./index.html"><h1 class="logo">Gadgets<span>Store</span></h1></a>
+        <ul>
+          <li><a href="./Home.html">Home</a></li>
+          <li><a href="#">Products</a>
+              <div class="dropdown-menu">
+                  <ul>
+                    <li><a href="./Airpods.html">Airpods</a></li>
+                    <li><a href="./Laptop.html">Laptops</a></li>
+                    <li><a href="./Speakers.html">Speakers</a></li>
+                    <li><a href="./Chargers&cables.html">Charger's & Cables</a></li>
+                    <li><a href="./Mobiles.html">Mobiles</a></li>
+                    <li><a href="./Smartwatches.html">SmartWatches</a></li>
+                  </ul>
+                </div>
+          </li>
+          <li><a href="./About us.html">About Us</a></li>
+          <li><a href="./Contact.html">Contact</a></li>
+          <li class="cart-icon">
+            <a href="./cart.html">
+                Cart
+            <span id="cart-count"></span>
+            </a>
+        </li>
+        </ul>
+      </div>
+      <br><br><br><br><br><br>
+    <div class="container" id="product-container"></div>
+    <footer>
+        <div class="footer-content">
+          <p>Contact Us:</p>
+          <p>Email: info@gadgetstore.com</p>
+          <p>Phone: 9112299443</p>
+          <p>Address: GadgetStore, KPHB, Hyderabad</p>
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+          <p>Business Hours:</p>
+          <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+          <p>Saturday: 10:00 AM - 4:00 PM</p>
+          <p>Sunday: Closed</p>
+          <p>Map Location:</p>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d121775.76607000595!2d78.30648513972267!3d17.483979020108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3bcb91c13579d387%3A0xf2e4f2f9281873f8!2sK%20P%20H%20B%20Phase%209%2C%20Kukatpally%2C%20Hyderabad%2C%20Telangana%20500085!3m2!1d17.483995999999998!2d78.3888869!5e0!3m2!1sen!2sin!4v1711436592963!5m2!1sen!2sin" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <br><br>
+        </div>
+      </footer>
+    <script>
+      var api_data=[
+
+{
+    "name": "HP Victus 16-DO309TX",
+    "price": "52,999",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS63Toxvt7AGWInQITeGKRJEHl-MZwiEKEu2qe4byBActf3oj-cLcgJiU88WjGlF6zG2nOQ5o387pH9kHMxzyp_lbU2eH453OpQSPvloDORLjf_oYXl27NW&usqp=CAE",
+    "brand": "HP",
+    "color": "Mica Silver",
+    "model": "16-DO309TX",
+    "weight": "2.48 kg",
+    "connectivity": "Wi-Fi 6, Bluetooth 5.2, USB Type-C, HDMI",
+    "description": "The HP Victus 16-DO309TX is a powerful gaming laptop with a 16.1-inch display, equipped with advanced cooling solutions and high-performance hardware for an immersive gaming experience."
+},
+{
+    "name": "Lenovo IdeaPro D330 Intel",
+    "price": "10,074",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcR9yCi4CHtDCAGEqv8MG7Zr8arZuZ13t8bGPMBhomT44mnmMvThRvBprPIaONnuMfYyM-SotoCB4H9NAh-5ZKkt57CB2ZxkTuz8nkmtidUuMsO17LK9beeT&usqp=CAE",
+    "brand": "Lenovo",
+    "color": "Mineral Grey",
+    "model": "IdeaPro D330",
+    "weight": "1.1 kg",
+    "connectivity": "Wi-Fi, Bluetooth 4.2, USB Type-C, micro HDMI",
+    "description": "The Lenovo IdeaPro D330 is a versatile 2-in-1 device with a detachable keyboard, perfect for both productivity and entertainment, featuring an Intel processor and long battery life."
+},
+{
+    "name": "Asus N3088WS ROG Strix G16",
+    "price": "96,499",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT9Fu9Lh1VT3JWPBEUapvdjEUYNGhUvv30E__xqOCPwki2cu19LZa6rmVT9jCGcV2VyAXNPkT2FzjlNnll6pno9ssyFD6tLT9O2VyJmoKHISQtDUZ69fF1A&usqp=CAE",
+    "brand": "Asus",
+    "color": "Eclipse Gray",
+    "model": "N3088WS ROG Strix G16",
+    "weight": "2.5 kg",
+    "connectivity": "Wi-Fi 6E, Bluetooth 5.2, USB Type-C, HDMI, Ethernet",
+    "description": "The Asus N3088WS ROG Strix G16 is a high-end gaming laptop with cutting-edge hardware, offering superior gaming performance and an advanced cooling system to keep it running smoothly."
+},
+{
+    "name": "HP omen 16-wd0990TX Gaming Laptop",
+    "price": "93,999",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTdaDEiLGBFUps7BHCP5gxq4AY7C_bq3m0ee8UKv9gZwmJxpmPDwkSVpMPy76ZIM4twjDT_3jO8pIANqLZFL7LMtAC5mKfwtS95wnORbStrGlMWDLVG-xeJ&usqp=CAE",
+    "brand": "HP",
+    "color": "Shadow Black",
+    "model": "omen 16-wd0990TX",
+    "weight": "2.3 kg",
+    "connectivity": "Wi-Fi 6E, Bluetooth 5.3, USB Type-C, HDMI, Ethernet",
+    "description": "The HP omen 16-wd0990TX is designed for serious gamers, featuring a large 16.1-inch screen, powerful internals, and an advanced cooling system to ensure optimal performance during intense gaming sessions."
+},
+{
+    "name": "HP ProBook 455G9 AmD Ryzan",
+    "price": "86,999",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQwHhB1S53biFkyEW-AK6QcEqWcJ_NJotJaZI3Ipv1td2Iqx6a3_slR-OHWfg8io8A9BeU8zRQFETF9LhW6XoGJXlSl9JKzAmLO8cmA-Va6&usqp=CAE",
+    "brand": "HP",
+    "color": "Asteroid Silver",
+    "model": "ProBook 455G9",
+    "weight": "1.74 kg",
+    "connectivity": "Wi-Fi 6, Bluetooth 5.2, USB Type-C, HDMI",
+    "description": "The HP ProBook 455G9 is a business laptop powered by AMD Ryzen, providing a balance of performance and portability, with advanced security features and long battery life for professionals on the go."
+},
+{
+    "name": "Apple 16 MacBook",
+    "price": "1,99,900",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRmmcjYEAA_0Ff7FeiYYdqHTSBCgU2X2U5CqZbtGPJLwon63fd81X_PBzFfH-td72OhySngODMVBnJXkl3R2uW7EdL6JQiDeXFwxurpU1hbD-qRtiCyI4Cq7w&usqp=CAE",
+    "brand": "Apple",
+    "color": "Space Gray",
+    "model": "MacBook Pro 16",
+    "weight": "2.0 kg",
+    "connectivity": "Wi-Fi 6, Bluetooth 5.0, Thunderbolt 4, USB 4, HDMI",
+    "description": "The Apple MacBook Pro 16 is a top-tier laptop designed for professionals, featuring a stunning Retina display, powerful M1 Pro/Max chip, and a sleek design, making it ideal for creative and demanding tasks."
+},
+{
+    "name": "JioBook 11 Mediatek",
+    "price": "12,999",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRTqyd6qly5ot76H23dviwa-laokAYZ1PandhBc3LTQ3P0-S3AjNRFdswcmMlsqnalsaBYtdnGxcPAxj4aFfWSx48ueS7A6MzBzFzQJXWuTGoOKvCVaywZF&usqp=CAE",
+    "brand": "Jio",
+    "color": "Blue",
+    "model": "JioBook 11",
+    "weight": "1.2 kg",
+    "connectivity": "Wi-Fi, Bluetooth, USB Type-C, HDMI",
+    "description": "The JioBook 11 is an affordable laptop powered by a Mediatek processor, suitable for basic computing tasks and online learning, with a lightweight design for easy portability."
+},
+{
+    "name": "Dell Insprion 15 Laptop",
+    "price": "38,999",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcS9OOBmHi2iPKjCIgEmbkHxq2l-r-tPKXL-0jaYbrkM2KaRHeLPdGfToAX91How1y-372YScUGaYSMcueTwKH05HYe1jWkzew&usqp=CAE",
+    "brand": "Dell",
+    "color": "Platinum Silver",
+    "model": "Inspiron 15",
+    "weight": "1.8 kg",
+    "connectivity": "Wi-Fi 6, Bluetooth 5.1, USB Type-C, HDMI",
+    "description": "The Dell Inspiron 15 is a reliable and budget-friendly laptop that offers good performance for everyday tasks, featuring a 15.6-inch display and robust connectivity options."
+},
+{
+    "name": "Techno Megabook T1 Gen Intel core 14",
+    "price": "22,990",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQytOYDZS9fc8yQuXVmRjD5at6ctEzVWb_5Tgwxx-C9brEGJjmwZg3FAbQ-D-ILDmu05QZ0bPR33x31ntOPKYvaknjcPakpSc9wrduYg3X3OJCYrNZAsw_k&usqp=CAE",
+    "brand": "Techno",
+    "color": "Dark Ash Silver",
+    "model": "Megabook T1",
+    "weight": "1.5 kg",
+    "connectivity": "Wi-Fi, Bluetooth, USB Type-C, HDMI",
+    "description": "The Techno Megabook T1 is a compact and affordable laptop with an Intel Core processor, designed for students and professionals who need a reliable device for everyday use."
+},
+{
+    "name": "Samsung Galaxy Book3 Core 15 Core",
+    "price": "64,999",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQkZjJWH642OepZ2Pak05HT4N89mVgFGuV2s3swelPPi8sv_HbZEnJGZdkE1hNqoNWUsUUJua95-_JclrxgTjUfZzZlsDBlnyKqi26rhL1zxvaAi6qqUOO0&usqp=CAE",
+    "brand": "Samsung",
+    "color": "Mystic Silver",
+    "model": "Galaxy Book3 Core 15",
+    "weight": "1.6 kg",
+    "connectivity": "Wi-Fi 6, Bluetooth 5.1, USB Type-C, HDMI",
+    "description": "The Samsung Galaxy Book3 Core 15 is a stylish and powerful laptop with a large 15.6-inch display, ideal for both work and entertainment, featuring long battery life and fast connectivity."
+}
+]
+
+
+
+
+
+        function createCard(product) {
+            var card = document.createElement('div');
+            card.className = 'card';
+
+            var img = document.createElement('img');
+            img.src = product.image;
+
+            var name = document.createElement('h1');
+            name.textContent = product.name;
+
+            var price = document.createElement('h2');
+            price.textContent = 'Price: ₹ ' + product.price;
+
+            var button = document.createElement('button');
+            button.textContent = 'See more';
+
+            button.addEventListener('click', function() {
+                addToCart(product);
+            });
+
+            card.appendChild(img);
+            card.appendChild(name);
+            card.appendChild(price);
+            card.appendChild(button);
+
+            return card;
+        }
+
+        function addToCart(product) {
+            sessionStorage.setItem('cartProduct', JSON.stringify(product));
+            window.location.assign('laptopgetapi.html');
+        }
+
+        var container = document.getElementById('product-container');
+        api_data.forEach(product => {
+            var card = createCard(product);
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>

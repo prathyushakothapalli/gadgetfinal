@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Cards</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            margin: 20px;
+            padding: 16px;
+            text-align: center;
+        }
+        .card img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .card h1 {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .card h2 {
+            font-size: 1em;
+            color: #555;
+            margin: 10px 0;
+        }
+        .card p {
+            font-size: 0.9em;
+            margin: 10px 0;
+        }
+        .card button {
+            background-color:green;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .cart-icon {
+            position: relative;
+            margin-left: auto;
+            margin-right: 20px; 
+            cursor: pointer;
+        }
+        .cart-count {
+            position: absolute;
+            top: 0;
+            right: -10px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 4px;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-bar">
+        <a href="./index.html"><h1 class="logo">Gadgets<span>Store</span></h1></a>
+        <ul>
+          <li><a href="./Home.html">Home</a></li>
+          <li><a href="#">Products</a>
+              <div class="dropdown-menu">
+                  <ul>
+                    <li><a href="./Airpods.html">Airpods</a></li>
+                    <li><a href="./Laptop.html">Laptops</a></li>
+                    <li><a href="./Speakers.html">Speakers</a></li>
+                    <li><a href="./Chargers&cables.html">Charger's & Cables</a></li>
+                    <li><a href="./Mobiles.html">Mobiles</a></li>
+                    <li><a href="./Smartwatches.html">SmartWatches</a></li>
+                  </ul>
+                </div>
+          </li>
+          <li><a href="./About us.html">About Us</a>
+          </li>
+          <li><a href="./Contact.html">Contact</a></li>
+          <li class="cart-icon">
+            <a href="cart.html">
+                Cart
+                <span id="cart-count"></span>
+            </a>
+        </li>
+        </ul>
+      </div>><br><br><br><br><br><br>
+
+    <div class="container" id="product-container"></div>
+    <footer>
+        <div class="footer-content">
+          <p>Contact Us:</p>
+          <p>Email: info@gadgetstore.com</p>
+          <p>Phone: 9112299443</p>
+          <p>Address: GadgetStore, KPHB, Hyderabad</p>
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+          <p>Business Hours:</p>
+          <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+          <p>Saturday: 10:00 AM - 4:00 PM</p>
+          <p>Sunday: Closed</p>
+          <p>Map Location:</p>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d121775.76607000595!2d78.30648513972267!3d17.483979020108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3bcb91c13579d387%3A0xf2e4f2f9281873f8!2sK%20P%20H%20B%20Phase%209%2C%20Kukatpally%2C%20Hyderabad%2C%20Telangana%20500085!3m2!1d17.483995999999998!2d78.3888869!5e0!3m2!1sen!2sin!4v1711436592963!5m2!1sen!2sin" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <br><br>
+        </div>
+      </footer>
+    <script>
+        var api_data=
+[
+{
+  "name": "iGear Galaxy 10W",
+  "price": "5,999",
+  "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQz5i5TElM6O2MzUYyDj70nL4s8ygPe9YQ9BgO1M1Oom1xLXIbDFpe2uLr-DgiiuxlE-q0euvsDZPAb9ga-kU3ZdfGZ0Bm9ZDmzPT-qShxyxZ0Q3w5K05FC3Q&usqp=CAE",
+  "brand": "iGear",
+  "color": "Not specified",
+  "model": "Galaxy 10W",
+  "weight": "Not specified",
+  "connectivity": "Not specified",
+  "description": "The iGear Galaxy 10W is a wireless charger with fast charging capability and a sleek design."
+},
+{
+  "name": "Saegama Carvaan mini",
+  "price": "4,999",
+  "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQYKxX5fO41Dq46gOCn8KLL12FXlHudeN50Q4bLk2MEoFkEx7ngjOukh2JtnDYc3Hfb5rBF3WOnmsIS5fiZPUq0uW4E4bPJ3w9gteUVOYCnz7CgwMd-pkLxQA&usqp=CAE",
+  "brand": "Saegama",
+  "color": "Not specified",
+  "model": "Carvaan mini",
+  "weight": "Not specified",
+  "connectivity": "Not specified",
+  "description": "The Saegama Carvaan mini is a portable music player with pre-loaded retro Hindi songs and FM radio."
+},
+{
+  "name": "pTron Fusion mini",
+  "price": "7,99",
+  "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSShD07j8C9IGpzeh2-LUMNUSrxs19bP3gQ9Wv2aYeGzbYSe6l3PxNf8LPrBq8U0GSnUa5hhWszPiZEs9IGW423pvpM0xARSQO52bseWBxEyqCrmOyczeDxAQ&usqp=CAE",
+  "brand": "pTron",
+  "color": "Not specified",
+  "model": "Fusion mini",
+  "weight": "Not specified",
+  "connectivity": "Not specified",
+  "description": "The pTron Fusion mini is a compact Bluetooth headset with noise-canceling features and long battery life."
+},
+{
+  "name": "Super Ultra Mini Boost",
+  "price": "499",
+  "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcREUedY4kiB2iesBeFJqktV0sb8fqzZftYKP5CDFT7Kk_W7jB5aQJ1-tJIz6m1NFMI0RxfbEWF-GvWFfNC9prQUBpChofcFe41wpwzxo2A1zh-IHmoLIMlClA&usqp=CAE",
+  "brand": "Super",
+  "color": "Not specified",
+  "model": "Ultra Mini Boost",
+  "weight": "Not specified",
+  "connectivity": "Not specified",
+  "description": "The Super Ultra Mini Boost is a compact power bank with a capacity of 5000mAh, suitable for emergency charging."
+},
+{
+  "name": "Sony Src-Xb 13 Wireless",
+  "price": "3,499",
+  "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSwWf3JsB5LWXxzzcPLEnWbY65QcAIj5PKmZK1yh3t6VJsQB3FvqAJfLwdrROCZ9ztiXMQJ7tV-DmslgkzPL5wEwAxVdfp_8fEMZlLMWqOOZgThigbUFMww-fojNAcwvZ0izCYA5A&usqp=CAc",
+  "brand": "Sony",
+  "color": "Not specified",
+  "model": "Src-Xb 13 Wireless",
+  "weight": "Not specified",
+  "connectivity": "Not specified",
+  "description": "The Sony Src-Xb 13 Wireless is a compact Bluetooth speaker with extra bass and up to 16 hours of battery life."
+},
+{
+  "name": "Zebronics ZEB-COUNTY",
+  "price": "499",
+  "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTyYlSlnvnU9OJXKlUWgFH9eUztsTzxubQJONqzBg_V7L5Tkwn9N15SrOuzwlGl2YvqctZ27JG_lZQvbh9vwMp8Ki86noVr0zKCZRBMDkgKpW6O9tqmbp4yuA&usqp=CAE",
+  "brand": "Zebronics",
+  "color": "Not specified",
+  "model": "ZEB-COUNTY",
+  "weight": "Not specified",
+  "connectivity": "Not specified",
+  "description": "The Zebronics ZEB-COUNTY is a portable FM radio with USB and Bluetooth connectivity, suitable for outdoor use."
+},
+{
+  "name": "MIVI PlAY 5W",
+  "price": "949",
+  "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSXrIUa_k4lMprdk8SXRF1Vzrbyo4sYk43OOBoCJlSTrkUnnLyB5O9JZ0fLQt76K_RmRQ76iJ5_k84dnx3vhAUlclCF5q6rw9nloUtHr5SviZSo6-p1b7FWpA&usqp=CAE",
+  "brand": "MIVI",
+  "color": "Not specified",
+  "model": "PlAY 5W",
+  "weight": "Not specified",
+  "connectivity": "Not specified",
+  "description": "The MIVI PlAY 5W is a compact Bluetooth speaker with a sleek design and up to 6 hours of playback time."
+},
+{
+  "name": "Amazon Echo-4th Gen",
+  "price": "8,742",
+  "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRtzJRwFzE0GdjQI9CYPBcS77gvSa9BhgTKK1L_NH-GrWOqqPN7830hWDL44lOO_70pwvJw0ZMthHIsbe23XxTYeH97me1kcEfzlmRHu-H0gl0N1ZnJu_xv&usqp=CAE",
+  "brand": "Amazon",
+  "color": "Not specified",
+  "model": "Echo-4th Gen",
+  "weight": "Not specified",
+  "connectivity": "Not specified",
+  "description": "The Amazon Echo-4th Gen is a smart speaker with Alexa built-in, offering voice control for smart home devices."
+},
+{
+  "name": "J-B-Y Mini Boost",
+  "price": "5,999",
+  "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcS3g62flh1uX-c1oHXJktOI6uG84NNPQiVHyjFuenoYSI4p9ttJeu_GCkPKaEwW49zNHN26L3wRlMjque4LbRnODGnLvei2v9IbSH2vfScd8MJwWGs3AB8drg&usqp=CAE",
+  "brand": "J-B-Y",
+  "color": "Not specified",
+  "model": "Mini Boost",
+  "weight": "Not specified",
+  "connectivity": "Not specified",
+  "description": "The J-B-Y Mini Boost is a compact power bank with a capacity of 4000mAh, suitable for emergency charging."
+},
+{
+  "name": "Hitage Mini part 5W",
+  "price": "799",
+  "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSH8Hsz8vhM3JCriH7wqMW-5TejUOtKh49DscxcdCgwwJGh7Y5-3bU3mO8EChWKCJfEfbuHaGJO1GnXMq3q3qetsHQvx73kRriUjKZt6ha9sM8HE0FDTTwTcw&usqp=CAE",
+  "brand": "Hitage",
+  "color": "Not specified",
+  "model": "Mini part 5W",
+  "weight": "Not specified",
+  "connectivity": "Not specified",
+  "description": "The Hitage Mini part 5W is a portable Bluetooth speaker with a compact design and built-in microphone."
+}
+]
+        function createCard(product) 
+        {
+            for(i=0;i<api_data.length;i++)
+            {
+            var card = document.createElement('div');
+            card.className = 'card';
+
+            var img = document.createElement('img');
+            img.src = product.image;
+
+            var name = document.createElement('h1');
+            name.textContent = product.name;
+
+            var price = document.createElement('h2');
+            price.textContent = 'Price: ₹ ' + product.price;
+
+            var button = document.createElement('button');
+            button.textContent = 'See more';
+            
+
+            button.addEventListener('click', function() 
+            {
+                addToCart(product);
+            });
+
+            card.appendChild(img);
+            card.appendChild(name);
+            card.appendChild(price);
+            card.appendChild(button);
+
+            return card;
+        }
+    }
+
+        function addToCart(product) 
+        {
+            sessionStorage.setItem('cartProduct', JSON.stringify(product));
+            window.location.assign('airpodsgetapi.html');
+        }
+
+        var container = document.getElementById('product-container');
+        api_data.forEach(product => 
+        {
+            var card = createCard(product);
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>

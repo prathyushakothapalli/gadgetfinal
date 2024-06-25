@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin: 70px;
+        }
+        .image-card, .details-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 16px;
+            text-align: center;
+            margin: 10px;
+        }
+        .image-card {
+            width: 400px;
+        }
+        .image-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .details-card {
+            width: 700px;
+            height:420px;
+            text-align: left;
+
+        }
+        .details-card p {
+            font-size: 1.0em;
+            margin: 10px 0;
+            font-weight: lighter;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        button {
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: green;
+            color: white;
+            width: 150px;
+            height: 45px;
+            margin-left:40%;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-bar">
+        <a href="./index.html"><h1 class="logo">Gadgets<span>Store</span></h1></a>
+        <ul>
+          <li><a href="./Home.html">Home</a></li>
+          <li><a href="#">Products</a>
+              <div class="dropdown-menu">
+                  <ul>
+                    <li><a href="./Airpods.html">Airpods</a></li>
+                    <li><a href="./Laptop.html">Laptops</a></li>
+                    <li><a href="./Speakers.html">Speakers</a></li>
+                    <li><a href="./Chargers&cables.html">Charger's & Cables</a></li>
+                    <li><a href="./Mobiles.html">Mobiles</a></li>
+                    <li><a href="./Smartwatches.html">SmartWatches</a></li>
+                  </ul>
+                </div>
+          </li>
+          <li><a href="./About us.html">About Us</a>
+          </li>
+          <li><a href="./Contact.html">Contact</a></li>
+          <li class="cart-icon">
+            <a href="./cart.html">
+                Cart
+            <span id="cart-count"></span>
+            </a>
+        </li>
+        </ul>
+      </div>><br><br><br><br><br><br>
+      <div class="container" id="product-container"></div>
+      <footer>
+        <div class="footer-content">
+          <p>Contact Us:</p>
+          <p>Email: info@gadgetstore.com</p>
+          <p>Phone: 9112299443</p>
+          <p>Address: GadgetStore, KPHB, Hyderabad</p>
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+          <p>Business Hours:</p>
+          <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+          <p>Saturday: 10:00 AM - 4:00 PM</p>
+          <p>Sunday: Closed</p>
+          <p>Map Location:</p>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d121775.76607000595!2d78.30648513972267!3d17.483979020108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3bcb91c13579d387%3A0xf2e4f2f9281873f8!2sK%20P%20H%20B%20Phase%209%2C%20Kukatpally%2C%20Hyderabad%2C%20Telangana%20500085!3m2!1d17.483995999999998!2d78.3888869!5e0!3m2!1sen!2sin!4v1711436592963!5m2!1sen!2sin" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <br><br>
+        </div>
+      </footer>
+    <script>
+        var cartProduct = JSON.parse(sessionStorage.getItem('cartProduct'));
+
+        function displayCartProduct(product) {
+            var container = document.getElementById('cart-container');
+
+            var cartItem = document.createElement('div');
+            cartItem.className = 'cart-item';
+
+            var imageCard = document.createElement('div');
+            imageCard.className = 'image-card';
+
+            var img = document.createElement('img');
+            img.src = product.image;
+
+            imageCard.appendChild(img);
+
+            var detailsCard = document.createElement('div');
+            detailsCard.className = 'details-card';
+
+            var name = document.createElement('p');
+            name.innerHTML = `<b>Name:</b> ` + product.name;
+
+            var brand = document.createElement('p');
+            brand.innerHTML = `<b>Brand:</b> ` + product.brand;
+
+            var price = document.createElement('p');
+            price.innerHTML = `<b>Price:</b> ₹ ` + product.price;
+
+            var color = document.createElement('p');
+            color.innerHTML = `<b>Color:</b> ` + product.color;
+
+            var model = document.createElement('p');
+            model.innerHTML = `<b>Model:</b> ` + product.model;
+
+            var weight = document.createElement('p');
+            weight.innerHTML = `<b>Weight:</b> ` + product.weight;
+
+            var connectivity = document.createElement('p');
+            connectivity.innerHTML = `<b>Connectivity:</b> ` + product.connectivity;
+
+            var description = document.createElement('p');
+            description.innerHTML = `<b>Description:</b> ` + product.description;
+
+            var button = document.createElement('button');
+            button.innerHTML = 'Add to Cart';
+
+            detailsCard.appendChild(name);
+            detailsCard.appendChild(brand);
+            detailsCard.appendChild(price);
+            detailsCard.appendChild(color);
+            detailsCard.appendChild(model);
+            detailsCard.appendChild(weight);
+            detailsCard.appendChild(connectivity);
+            detailsCard.appendChild(description);
+            detailsCard.appendChild(button);
+
+            cartItem.appendChild(imageCard);
+            cartItem.appendChild(detailsCard);
+
+            container.appendChild(cartItem);
+        }
+
+        if (cartProduct) {
+            displayCartProduct(cartProduct);
+        } else {
+            document.getElementById('cart-container').innerHTML = '<p>No product in the cart.</p>';
+        }
+    </script>
+</body>
+</html>

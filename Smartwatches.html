@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Cards</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            margin: 20px;
+            padding: 16px;
+            text-align: center;
+        }
+        .card img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .card h1 {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .card h2 {
+            font-size: 1em;
+            color: #555;
+            margin: 10px 0;
+        }
+        .card p {
+            font-size: 0.9em;
+            margin: 10px 0;
+        }
+        .card button {
+            background-color:green;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .cart-icon {
+            position: relative;
+            margin-left: auto;
+            margin-right: 20px; 
+            cursor: pointer;
+        }
+        .cart-count {
+            position: absolute;
+            top: 0;
+            right: -10px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 4px;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-bar">
+        <a href="./index.html"><h1 class="logo">Gadgets<span>Store</span></h1></a>
+        <ul>
+          <li><a href="./Home.html">Home</a></li>
+          <li><a href="#">Products</a>
+              <div class="dropdown-menu">
+                  <ul>
+                    <li><a href="./Airpods.html">Airpods</a></li>
+                    <li><a href="./Laptop.html">Laptops</a></li>
+                    <li><a href="./Speakers.html">Speakers</a></li>
+                    <li><a href="./Chargers&cables.html">Charger's & Cables</a></li>
+                    <li><a href="./Mobiles.html">Mobiles</a></li>
+                    <li><a href="./Smartwatches.html">SmartWatches</a></li>
+                  </ul>
+                </div>
+          </li>
+          <li><a href="./About us.html">About Us</a>
+          </li>
+          <li><a href="./Contact.html">Contact</a></li>
+          <li class="cart-icon">
+            <a href="cart.html">
+                Cart
+                <span id="cart-count"></span>
+            </a>
+        </li>
+        </ul>
+      </div>><br><br><br><br><br><br>
+
+    <div class="container" id="product-container"></div>
+    <footer>
+        <div class="footer-content">
+          <p>Contact Us:</p>
+          <p>Email: info@gadgetstore.com</p>
+          <p>Phone: 9112299443</p>
+          <p>Address: GadgetStore, KPHB, Hyderabad</p>
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+          <p>Business Hours:</p>
+          <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+          <p>Saturday: 10:00 AM - 4:00 PM</p>
+          <p>Sunday: Closed</p>
+          <p>Map Location:</p>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d121775.76607000595!2d78.30648513972267!3d17.483979020108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3bcb91c13579d387%3A0xf2e4f2f9281873f8!2sK%20P%20H%20B%20Phase%209%2C%20Kukatpally%2C%20Hyderabad%2C%20Telangana%20500085!3m2!1d17.483995999999998!2d78.3888869!5e0!3m2!1sen!2sin!4v1711436592963!5m2!1sen!2sin" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <br><br>
+        </div>
+      </footer>
+    <script>
+    var api_data=[
+    {
+        "name": "Noise Colorfit",
+        "price": "1,299",
+        "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSamOa4CWHf6_GLRipY2oLZ5smBTVBWgXJhoJoAbHCPZ9MY_IWAkD1BO97do7hUdXmtIHs67y0uZ0wVUmFYNKaxmjBj6y0UIQaAx_rBDRjhy5zdyL_77GRFoQ&usqp=CAE",
+        "brand": "Noise",
+        "color": "Black",
+        "model": "Colorfit",
+        "weight": "Not specified",
+        "connectivity": "Not specified",
+        "description": "The Noise Colorfit is a stylish smartwatch with basic features including heart rate monitoring and step tracking."
+    },
+    {
+        "name": "Apple Series 9 GPS",
+        "price": "80,999",
+        "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQl-3tR2gecS8tUfe-Lu5gA3XZPSFgI7j87j_idLAL_k6o42Dx8AJpiIDXZDoMKyPBGr6lrTpiou2EP5FFJgRQ2Nx64TJzH6qiN17EHQzHwVanzKAORt0u1&usqp=CAE",
+        "brand": "Apple",
+        "color": "Silver",
+        "model": "Series 9 GPS",
+        "weight": "Not specified",
+        "connectivity": "Not specified",
+        "description": "The Apple Series 9 GPS is a premium smartwatch with advanced health tracking and a high-resolution display."
+    },
+    {
+        "name": "New Galaxy Fit3",
+        "price": "4,999",
+        "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSt330tpQzoAssI5wwuLhFHONi67XcY1H_8aT8ZWjUi91DrXP2rzZ9zU2WJ4RCJ95MTp0ZacSeTehizmLxjURKIVTO4nGkB0diApStFeAyl6h1Jb5AHOiWyNg&usqp=CAE",
+        "brand": "Samsung",
+        "color": "Black",
+        "model": "Galaxy Fit3",
+        "weight": "Not specified",
+        "connectivity": "Not specified",
+        "description": "The New Galaxy Fit3 is a sleek fitness tracker with a vibrant display and comprehensive fitness tracking features."
+    },
+    {
+        "name": "Noise color fit Pro 5",
+        "price": "3,399",
+        "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTmD4VRi-U2_v2nrQ8Lg2ITLudp-zt0YgZ0wgn6eorfX-tTOdkVlPvukA2TM8_VKTN3TqtDM5eewlW9d-tVe9lGjpc8tw65d8WnNK_GAUK3wf8JJBqCH2li&usqp=CAE",
+        "brand": "Noise",
+        "color": "Not specified",
+        "model": "Color fit Pro 5",
+        "weight": "Not specified",
+        "connectivity": "Not specified",
+        "description": "The Noise color fit Pro 5 is a smartwatch that comes with a price tag of 3,399 and features a stylish design and a color display."
+    },
+    {
+        "name": "Applw Ultra 2 GPS",
+        "price": "89,999",
+        "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcR6qKU1m9XZjaRKaroVuE6SkygayEClvCLCop9Nc1N66JfqvnYYbgBU1apoFeP2SwnRXLZ8Gav82xA3AE4XW9yDOT1lfFa70S2p3XzKo-PDGq03tXlnf06_hw&usqp=CAE",
+        "brand": "Applw",
+        "color": "Space Gray",
+        "model": "Ultra 2 GPS",
+        "weight": "Not specified",
+        "connectivity": "Not specified",
+        "description": "The Applw Ultra 2 GPS is a high-end smartwatch with a price of 89,999 and features GPS functionality, health tracking, and a large Retina display."
+    },
+    {
+        "name": "NoiseFit Halo",
+        "price": "2,799",
+        "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRD3LL885BYaSufHTFV7DNccE1OIep1jcEJPlHrrExZwNHez0cPJ6TXyAqU_3iOurRDIJMfYvBMb9-6xG5zxmR1_jKHF6bIEmtsq4HqO2NcwcwBKpupKt1J&usqp=CAE",
+        "brand": "Noise",
+        "color": "Not specified",
+        "model": "Fit Halo",
+        "weight": "Not specified",
+        "connectivity": "Not specified",
+        "description": "The NoiseFit Halo is a fitness band with a stylish design and basic features including heart rate monitoring and sleep tracking."
+    },
+    {
+        "name": "Noise Macro Fit",
+        "price": "1,647",
+        "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRTVlrOTXadV19ykCc2VkX0HlYx8lgjJWRrrz4IBFOgjyh1sbHrOzJuL4sy-Spxy1C2g6pHd3z-M1u4N0_wvnjAbkkf_pqQbcGPg3v4vUfwElKZsCg66rKTiw&usqp=CAE",
+        "brand": "Noise",
+        "color": "Not specified",
+        "model": "Macro Fit",
+        "weight": "Not specified",
+        "connectivity": "Not specified",
+        "description": "The Noise Macro Fit is a basic fitness band with essential features such as step counting and calorie tracking."
+    },
+    {
+        "name": "Beatxp Vector",
+        "price": "9,99",
+        "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRkgNUfDitNMY_e92RujqMNmAf7k78-cn0seBo7JwuTeQNuxlLdkiENf6eJDeIOYrVljFi1IJvCTsDKjrVTKGG0eFh_NL6M_nJD802NypVX4EoATnfp1lyzAg&usqp=CAE",
+        "brand": "Beatxp",
+        "color": "Not specified",
+        "model": "Vector",
+        "weight": "Not specified",
+        "connectivity": "Not specified",
+        "description": "The Beatxp Vector is a budget fitness band with basic features including heart rate monitoring and step tracking."
+    },
+    {
+        "name": "Boat Wave Edge",
+        "price": "1,647",
+        "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSYxp9Mjq4MLy3aqquT4g8QXUJX87N3wZzE-yn0kOnBmyEeJGXELhMOS1pQ7AFmYvDpjgYfSj5jdHmHHWs5ffiH-cKRuIsY7_POZu8O1YxNHUcRsMuV9Q8-Cw&usqp=CAE",
+        "brand": "Boat",
+        "color": "Not specified",
+        "model": "Wave Edge",
+        "weight": "Not specified",
+        "connectivity": "Not specified",
+        "description": "The Boat Wave Edge is a stylish fitness band with a sleek design and basic fitness tracking features."
+    },
+    {
+        "name": "Boat Lunar Comet",
+        "price": "1,599",
+        "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQUqmCx8g2vDh7eY8d34G57feB1bp2SJBOGrYKsBA8Ez13-Nt4d-LiZpl9d2WgK3r4Z7Ttn_NuYIE12N2TZJT35mjCK3zOcPSF4UOy6pVlUAsXQBO5Mefqs&usqp=CAE",
+        "brand": "Boat",
+        "color": "Not specified",
+        "model": "Lunar Comet",
+        "weight": "Not specified",
+        "connectivity": "Not specified",
+        "description": "The Boat Lunar Comet is an affordable fitness band with basic features including step counting and sleep tracking."
+    }
+]
+        function createCard(product) 
+        {
+            for(i=0;i<api_data.length;i++)
+            {
+            var card = document.createElement('div');
+            card.className = 'card';
+
+            var img = document.createElement('img');
+            img.src = product.image;
+
+            var name = document.createElement('h1');
+            name.textContent = product.name;
+
+            var price = document.createElement('h2');
+            price.textContent = 'Price: ₹ ' + product.price;
+
+            var button = document.createElement('button');
+            button.textContent = 'See more';
+            
+
+            button.addEventListener('click', function() 
+            {
+                addToCart(product);
+            });
+
+            card.appendChild(img);
+            card.appendChild(name);
+            card.appendChild(price);
+            card.appendChild(button);
+
+            return card;
+        }
+    }
+
+        function addToCart(product) 
+        {
+            sessionStorage.setItem('cartProduct', JSON.stringify(product));
+            window.location.assign('airpodsgetapi.html');
+        }
+
+        var container = document.getElementById('product-container');
+        api_data.forEach(product => 
+        {
+            var card = createCard(product);
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>

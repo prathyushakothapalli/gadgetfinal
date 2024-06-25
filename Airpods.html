@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Cards</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            margin: 20px;
+            padding: 16px;
+            text-align: center;
+        }
+        .card img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .card h1 {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .card h2 {
+            font-size: 1em;
+            color: #555;
+            margin: 10px 0;
+        }
+        .card p {
+            font-size: 0.9em;
+            margin: 10px 0;
+        }
+        .card button {
+            background-color:green;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .cart-icon {
+            position: relative;
+            margin-left: auto;
+            margin-right: 20px; 
+            cursor: pointer;
+        }
+        .cart-count {
+            position: absolute;
+            top: 0;
+            right: -10px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 4px;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-bar">
+        <a href="./index.html"><h1 class="logo">Gadgets<span>Store</span></h1></a>
+        <ul>
+          <li><a href="./Home.html">Home</a></li>
+          <li><a href="#">Products</a>
+              <div class="dropdown-menu">
+                  <ul>
+                    <li><a href="./Airpods.html">Airpods</a></li>
+                    <li><a href="./Laptop.html">Laptops</a></li>
+                    <li><a href="./Speakers.html">Speakers</a></li>
+                    <li><a href="./Chargers&cables.html">Charger's & Cables</a></li>
+                    <li><a href="./Mobiles.html">Mobiles</a></li>
+                    <li><a href="./Smartwatches.html">SmartWatches</a></li>
+                  </ul>
+                </div>
+          </li>
+          <li><a href="./About us.html">About Us</a>
+          </li>
+          <li><a href="./Contact.html">Contact</a></li>
+          <li class="cart-icon">
+            <a href="cart.html">
+                Cart
+                <span id="cart-count"></span>
+            </a>
+        </li>
+        </ul>
+      </div>><br><br><br><br><br><br>
+
+    <div class="container" id="product-container"></div>
+    <footer>
+        <div class="footer-content">
+          <p>Contact Us:</p>
+          <p>Email: info@gadgetstore.com</p>
+          <p>Phone: 9112299443</p>
+          <p>Address: GadgetStore, KPHB, Hyderabad</p>
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+          <p>Business Hours:</p>
+          <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+          <p>Saturday: 10:00 AM - 4:00 PM</p>
+          <p>Sunday: Closed</p>
+          <p>Map Location:</p>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d121775.76607000595!2d78.30648513972267!3d17.483979020108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3bcb91c13579d387%3A0xf2e4f2f9281873f8!2sK%20P%20H%20B%20Phase%209%2C%20Kukatpally%2C%20Hyderabad%2C%20Telangana%20500085!3m2!1d17.483995999999998!2d78.3888869!5e0!3m2!1sen!2sin!4v1711436592963!5m2!1sen!2sin" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <br><br>
+        </div>
+      </footer>
+
+    <script>
+           var api_data = 
+         [
+            {
+                    "name": "OnePlus Nord CE506",
+                    "brand": "OnePlus",
+                    "color": "Misty Green",
+                    "model": "E506A",
+                    "weight": "0.20kg",
+                    "connectivity": "Wireless",
+                    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcThUOUjAKK2xkUAojFU-hjSa96noC0FSYpP9_aKAfRTnNg05lMFwm4RI6iFd9GdbfY8Zf4pqjUbSo9PtD2hRi6dmHZc9P_oMWSpAYvZg4nLq8EjF36MI626&usqp=CAE",
+                    "price": "1,899",
+                    "description": [
+                    "Nord Buds CE comes with gigantic titanium coated 13.4mm dynamic drivers for smooth sound and deep heavy bass.",
+                    "Nord Buds CE is a semi-in ear truly wireless earbuds with curved & rounded design.",
+                    "Get Up to 80 minutes of battery with fast charging in 10 minutes.",
+                    "Choose 1 of the 4 unique audio profiles to jazz up your listening experience."]
+
+            },
+
+            {
+                    "name": "OnePlus Nord Buds 2r",
+                    "brand": "OnePlus",
+                    "color": "Black",
+                    "model": "E566B",
+                    "weight": "0.25kg",
+                    "connectivity": "Wireless",
+                    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQCiDo_JKECGBDgMAge1UucxcUVDoiIK6XISht-xmvIXp1NLa9LoPFwDuC_jhv0bPeVxZcCA01iWWLvvMXqjD1pYWLPbE2NcXS1e_Rb-MCXByK1RyBf5PEn_w&usqp=CAE",
+                    "price":  "2,045",
+                "description": [
+                    "Immersive sound experience with high-quality audio drivers.",
+                    "Ergonomically designed for comfort and secure fit.",
+                    "Long-lasting battery life for extended usage.",
+                    "Intelligent touch controls for easy operation.",
+                    "Seamless connectivity with OnePlus devices."
+                ]
+            },
+            {
+                    "name": "OnePlus Buds 3 TWS",
+                    "brand": "OnePlus",
+                    "color": "Sea blue",
+                    "model": "E789C",
+                    "weight": "0.22kg",
+                    "connectivity": "Wireless",
+                    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSFZC-crnHhr-JPEwNe8q1zvT4hlCwItHxzdWecAo_b2x4Y4Km0_bQcVYdynSmXQMcGJL-4J1bcwz6NKjO9jBVq2hE0NEcI-USpDIKCTIbGtOAbyLY43f7Giw&usqp=CAE",
+                     "price": "5,999",
+                     "description": [
+                    "Immersive sound experience with high-quality audio drivers.",
+                    "Ergonomically designed for comfort and secure fit.",
+                    "Long-lasting battery life for extended usage.",
+                    "Intelligent touch controls for easy operation.",
+                    "Seamless connectivity with OnePlus devices."]
+            },
+            {
+                    "name": "OnePlus Nord True",
+                    "brand": "OnePlus",
+                    "color": "Blue",
+                    "model": "E789D",
+                    "weight": "0.23kg",
+                    "connectivity": "Wireless",
+                    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcT0fYlEdGukRCWXJifvRIrw2WMP93oIJehC1IFXthHc6GEKXgfOpHtUTbad3sN-FKftbCsOVkUoQ8yhAWbIhNzgHCZXkStExU_t_KOlZPlI43v-50yL7J3C6Q&usqp=CAE",
+                    "price": "2,999",
+                    "description": [
+                    "Immersive sound experience with high-quality audio drivers.",
+                    "Ergonomically designed for comfort and secure fit.",
+                    "Long-lasting battery life for extended usage.",
+                    "Intelligent touch controls for easy operation.",
+                    "Seamless connectivity with OnePlus devices."
+                ]
+            },
+            {
+                    "name": "OnePlus Buds 3",
+                    "brand": "OnePlus",
+                    "color": "White",
+                    "model": "E901A",
+                    "weight": "0.22kg",
+                    "connectivity": "Wireless",
+                    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQ5GcYjJgJzKlNYGiY-ETvJCakwdQHNmO1bdHbCmKQ1cP4ZXbi-hmT_9oFxwuOcFGNrfWEYhG6IqLqC-fhUaA7vkhV7hQJqymEZSohiMccIqCMxV_wzZs9Zug&usqp=CAE",
+                    "price": "3,999",
+                    "description": [
+                    "Immersive sound experience with high-quality audio drivers.",
+                    "Ergonomically designed for comfort and secure fit.",
+                    "Long-lasting battery life for extended usage.",
+                    "Intelligent touch controls for easy operation.",
+                    "Seamless connectivity with OnePlus devices."
+                ]
+            },
+            {
+                "name": "AirPods Pro 2nd Gen",
+                "brand": "Apple",
+                "color": "White",
+                "model": "A2698",
+                "weight": "0.19kg",
+                "connectivity": "Wireless",
+                "image": "https://gadgetsstore.co.in/wp-content/uploads/2023/03/airpods-pro-2nd-gen.jpg",
+                "price": "15,890",
+                "description": [
+                   "Exceptional audio quality with high-fidelity sound.",
+                   "Active noise cancellation for immersive sound.",
+                   "Customizable fit for all-day comfort.",
+                   "Transparency mode for hearing and interacting with the world around you.",
+                   "Sweat and water resistance for added durability.",
+                   "Seamless connectivity with Apple devices."]
+            },
+            {
+        "name": "Apple 2 Pro",
+        "brand": "Apple",
+        "color": "White",
+        "model": "A2801",
+        "weight": "0.21kg",
+        "connectivity": "Wireless",
+        "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcR65sZg9aVIYQQB0WZmSTbmP96WR6D68uK7HLRs7WxbIVI3hWO2b_M41ClSXFMlmdgCeafA5j7gTGESmu4VZgK0cbaMf-lG9F_dPU6QZ5H2LWci8VUno2vF&usqp=CAE",
+        "price": "18,899",
+        "description": [
+            "High-fidelity audio for a premium listening experience.",
+            "Active noise cancellation for an immersive sound experience.",
+            "Customizable fit with multiple ear tip options.",
+            "Transparency mode to stay aware of your surroundings.",
+            "Sweat and water resistant for reliable performance.",
+            "Effortless setup and automatic switching for Apple devices."
+        ]
+    },
+    {
+            "name": "AirPods Pro 3rd Gen",
+            "brand": "Apple",
+            "color": "White",
+            "model": "A2931",
+            "weight": "0.19kg",
+            "connectivity": "Wireless",
+            "image": "https://gadgetsstore.co.in/wp-content/uploads/2017/12/AIRPODSS.jpg",
+            "price": "17,999",
+            "description": [
+                "Next-generation audio performance with improved sound quality.",
+                "Active noise cancellation for immersive listening.",
+                "Customizable fit for comfortable wear.",
+                "Transparency mode to hear and interact with the world around you.",
+                "Sweat and water resistance for durability.",
+                "Seamless integration with Apple devices."
+            ]
+        },
+        {
+            "name": "AirPods Pro 3",
+            "brand": "Apple",
+            "color": "White",
+            "model": "A2932",
+            "weight": "0.19kg",
+            "connectivity": "Wireless",
+            "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRhV4vwoXIOMR1wf6sXLwapMEO_BA1F_ZonwKnrB9J8x43R_lO2Vf1OQnGikFNmsvcB81LHiJngYPqDUXnYvI1-BXmG_WcmjvKcChs39gBMOfact1QpRgrDKw&usqp=CAE",
+            "price": "18,999",
+            "description": [
+                "Superior sound quality with advanced audio technology.",
+                "Active noise cancellation for an immersive experience.",
+                "Ergonomic design for a secure and comfortable fit.",
+                "Transparency mode for situational awareness.",
+                "Water and sweat resistant for active lifestyles.",
+                "Effortless connectivity with Apple ecosystem."
+            ]
+        },
+        {
+            "name": "AirPods MagSafe",
+            "brand": "Apple",
+            "color": "White",
+            "model": "A2565",
+            "weight": "0.20kg",
+            "connectivity": "Wireless",
+            "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcREyy_JpR3xlmUxk7LuP2AQe26IM-6aHBEnudd5Ia6b_WRYldbVbVG9gNjUO28kTX70ItIIhCVCh41UgERu14Vw2n8irx7DQTTzSQEVpzyxCo4rTmYt49rpyg&usqp=CAE",
+            "price": "24,900",
+            "description": [
+                "High-fidelity audio with MagSafe charging.",
+                "Active noise cancellation for premium sound.",
+                "Comfortable fit with various ear tips.",
+                "Transparency mode to stay aware of surroundings.",
+                "Sweat and water resistance for reliability.",
+                "Smooth integration with Apple devices."
+            ]
+        },
+        ];
+
+        function createCard(product) 
+        {
+            for(i=0;i<api_data.length;i++)
+            {
+            var card = document.createElement('div');
+            card.className = 'card';
+
+            var img = document.createElement('img');
+            img.src = product.image;
+
+            var name = document.createElement('h1');
+            name.textContent = product.name;
+
+            var price = document.createElement('h2');
+            price.textContent = 'Price: ₹ ' + product.price;
+
+            var button = document.createElement('button');
+            button.textContent = 'See more';
+            
+
+            button.addEventListener('click', function() 
+            {
+                addToCart(product);
+            });
+
+            card.appendChild(img);
+            card.appendChild(name);
+            card.appendChild(price);
+            card.appendChild(button);
+
+            return card;
+        }
+    }
+
+        function addToCart(product) 
+        {
+            sessionStorage.setItem('cartProduct', JSON.stringify(product));
+            window.location.assign('airpodsgetapi.html');
+        }
+
+        var container = document.getElementById('product-container');
+        api_data.forEach(product => 
+        {
+            var card = createCard(product);
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Cards</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            margin: 20px;
+            padding: 16px;
+            text-align: center;
+        }
+        .card img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .card h1 {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .card h2 {
+            font-size: 1em;
+            color: #555;
+            margin: 10px 0;
+        }
+        .card p {
+            font-size: 0.9em;
+            margin: 10px 0;
+        }
+        .card button {
+            background-color:green;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .cart-icon {
+            position: relative;
+            margin-left: auto;
+            margin-right: 20px; 
+            cursor: pointer;
+        }
+        .cart-count {
+            position: absolute;
+            top: 0;
+            right: -10px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 4px;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-bar">
+        <a href="./index.html"><h1 class="logo">Gadgets<span>Store</span></h1></a>
+        <ul>
+          <li><a href="./Home.html">Home</a></li>
+          <li><a href="#">Products</a>
+              <div class="dropdown-menu">
+                  <ul>
+                    <li><a href="./Airpods.html">Airpods</a></li>
+                    <li><a href="./Laptop.html">Laptops</a></li>
+                    <li><a href="./Speakers.html">Speakers</a></li>
+                    <li><a href="./Chargers&cables.html">Charger's & Cables</a></li>
+                    <li><a href="./Mobiles.html">Mobiles</a></li>
+                    <li><a href="./Smartwatches.html">SmartWatches</a></li>
+                  </ul>
+                </div>
+          </li>
+          <li><a href="./About us.html">About Us</a>
+          </li>
+          <li><a href="./Contact.html">Contact</a></li>
+          <li class="cart-icon">
+            <a href="cart.html">
+                Cart
+                <span id="cart-count"></span>
+            </a>
+        </li>
+        </ul>
+      </div>><br><br><br><br><br><br>
+
+    <div class="container" id="product-container"></div>
+    <footer>
+        <div class="footer-content">
+          <p>Contact Us:</p>
+          <p>Email: info@gadgetstore.com</p>
+          <p>Phone: 9112299443</p>
+          <p>Address: GadgetStore, KPHB, Hyderabad</p>
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+          <p>Business Hours:</p>
+          <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+          <p>Saturday: 10:00 AM - 4:00 PM</p>
+          <p>Sunday: Closed</p>
+          <p>Map Location:</p>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d121775.76607000595!2d78.30648513972267!3d17.483979020108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3bcb91c13579d387%3A0xf2e4f2f9281873f8!2sK%20P%20H%20B%20Phase%209%2C%20Kukatpally%2C%20Hyderabad%2C%20Telangana%20500085!3m2!1d17.483995999999998!2d78.3888869!5e0!3m2!1sen!2sin!4v1711436592963!5m2!1sen!2sin" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <br><br>
+        </div>
+      </footer>
+    <script>
+    var api_data = 
+[
+{
+    "name": "Original 65W Charger",
+    "price": "999",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRrzTXccKQJH4Qoi4eIGQFQ1E7c17sRMakMFXfpKRUHn7BPUuMwdO6rH0zVmQZyirRmmKrBQ_TDdK2jabIi4bFjlGLyM_FYDanyR4Y1SSmqyW6DFndOHLqL&usqp=CAE",
+    "brand": "Generic",
+    "color": "White",
+    "model": "65W-Original",
+    "weight": "150g",
+    "connectivity": "Wired",
+    "description": "A high-power 65W charger suitable for various devices."
+},
+{
+    "name": "Techgear Glowing Cable",
+    "price": "475",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRDSUhf5P_LbMul1z9JarOMdkaaP3jZN3afCS-pubupNhibu-yExUSaZagqGdd4ZNpeHQcFEQaRWtWMZAZuwCjpcpYv3yZlSLwsI_jdWbx_3Nd8T9bbrr0p&usqp=CAE",
+    "brand": "Techgear",
+    "color": "Blue",
+    "model": "TG-Glowing",
+    "weight": "50g",
+    "connectivity": "Wired",
+    "description": "A glowing cable providing an aesthetic look while charging."
+},
+{
+    "name": "Multi Pin Charger",
+    "price": "499",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTIWiFaV9tYcNUDZLp81gzypYGdy9aH9M_RWoNl0WN_vIDRz0wnBcrdW_nDldMAX9mLBKsAvEQecDwMth2eXRhLySGDgS5aTqod-yCcrh5sqwBeG8aTnovRpg&usqp=CAE",
+    "brand": "Generic",
+    "color": "Black",
+    "model": "MP-Universal",
+    "weight": "120g",
+    "connectivity": "Multi-pin",
+    "description": "A versatile charger with multiple pins for different devices."
+},
+{
+    "name": "Bass Bling Charger",
+    "price": "427",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTX6odhl4oBXcSDvdDFAQhyDY50aMIcXPt-oG46WjtRlxr7-BrcTOvvOFw5sGS25ZRr-BpBXuuFDeX02y1JYL9DHD2eOQXKNh8quq0vuF-ek37T5AHI2Q19NQ&usqp=CAE",
+    "brand": "Bass",
+    "color": "Silver",
+    "model": "BB-Charger",
+    "weight": "130g",
+    "connectivity": "Wired",
+    "description": "A charger with a stylish design, known as Bass Bling Charger."
+},
+{
+    "name": "Magnetic Charger Cable",
+    "price": "3,936",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSMsLB-ftzIX94leuSom1L84ICA9-7o8L2Sa1exmxlrNH2v9Vt_JKpLff1IsUtJBf9pD1bYA49DUyo2cDYJEcasks0_-3-v&usqp=CAE",
+    "brand": "Generic",
+    "color": "Black",
+    "model": "Mag-Cable",
+    "weight": "60g",
+    "connectivity": "Magnetic",
+    "description": "A premium magnetic charger cable."
+},
+{
+    "name": "3 in 1 Nylon Charger",
+    "price": "399",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQqkxMuLjmss5Y-iL5DvSOoVxjfSq7eUhdWj_nuhgKKyJeUzmvwJ5KOaoWuCjuiPgFwornK10IC-XIfh8AvdLfrzuoFzmJm54PBE3QlinLtMOJQPfcr7F0lsQ&usqp=CAE",
+    "brand": "Generic",
+    "color": "Black",
+    "model": "3N-Charger",
+    "weight": "70g",
+    "connectivity": "Multi-pin",
+    "description": "A 3 in 1 nylon charger suitable for various devices."
+},
+{
+    "name": "MMAK Fast Charger",
+    "price": "300",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRXfDr4X4qZ9XPCoQk79zOaZI0kf9mXbMbLdjCOis9AHRfCPiUCj-zGR1FvgCQ65xVt7BR-7uEAAIeU_GlUl3SHvjZafSMFAfm4E3g9O4Ak7sU-iTmuDjjh&usqp=CAE",
+    "brand": "MMAK",
+    "color": "White",
+    "model": "MMAK-Fast",
+    "weight": "140g",
+    "connectivity": "Wired",
+    "description": "A fast charger from MMAK brand."
+},
+{
+    "name": "Ainope USB 100W",
+    "price": "2,078",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTfhaDyZSktmrxUKfAq6GpZEmq8gETp4Lbb4sUg7YcVPFFj0ePZQIIo1OHrQulQ-ZogrfuK_D44cC0ci770FENwf274gfOmdIntkxVyKss&usqp=CAE",
+    "brand": "Ainope",
+    "color": "Black",
+    "model": "Ain-100W",
+    "weight": "110g",
+    "connectivity": "Wired",
+    "description": "A 100W USB charger from Ainope."
+},
+{
+    "name": "8pin USB Sync",
+    "price": "200",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSv1oH3SEDmo3dlOC7_0rjhsf5cQxrInJ0PLGmG7tSVcbihdwpVkLvzPWzQ4WD35ffyRLoF9dCZv-niB3tUKJN41Tzl7uI0TvrkwNWT0Y97gxX0prNpp07U&usqp=CAE",
+    "brand": "Generic",
+    "color": "White",
+    "model": "8pin-Sync",
+    "weight": "40g",
+    "connectivity": "Wired",
+    "description": "An 8pin USB sync charger."
+},
+{
+    "name": "3 in 1 Multi Sync",
+    "price": "4,068",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQm3JfaHK3BRqxalN4M5U5w1BhK_gsYL_A86tgqlQNqPUVSCb94qEcK1MAL34cvtNKf9IohZGIztJGTLeJ3FAhbkXvDrmuc&usqp=CAE",
+    "brand": "Generic",
+    "color": "Black",
+    "model": "3MS-Charger",
+    "weight": "90g",
+    "connectivity": "Multi-pin",
+    "description": "A 3 in 1 multi sync charger suitable for various devices."
+}
+]
+        function createCard(product) 
+        {
+            for(i=0;i<api_data.length;i++)
+            {
+            var card = document.createElement('div');
+            card.className = 'card';
+
+            var img = document.createElement('img');
+            img.src = product.image;
+
+            var name = document.createElement('h1');
+            name.textContent = product.name;
+
+            var price = document.createElement('h2');
+            price.textContent = 'Price: ₹ ' + product.price;
+
+            var button = document.createElement('button');
+            button.textContent = 'See more';
+            
+
+            button.addEventListener('click', function() 
+            {
+                addToCart(product);
+            });
+
+            card.appendChild(img);
+            card.appendChild(name);
+            card.appendChild(price);
+            card.appendChild(button);
+
+            return card;
+        }
+    }
+
+        function addToCart(product) 
+        {
+            sessionStorage.setItem('cartProduct', JSON.stringify(product));
+            window.location.assign('airpodsgetapi.html');
+        }
+
+        var container = document.getElementById('product-container');
+        api_data.forEach(product => 
+        {
+            var card = createCard(product);
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>

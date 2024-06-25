@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <style>
+        /* Basic styling for demonstration */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin: 5%;
+            margin-left: 10%;
+        }
+        form {
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input {
+            width: calc(100% - 20px);
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: #ff0000;
+            font-size: 0.8em;
+        }
+        #submit{
+            width:100px;
+            height: 35px;
+            padding: 10px;
+            color:white;
+            border: none;
+            background-color: #45a049;
+            text-decoration: none;
+            border-radius: 10%;
+            margin-left: 40%;
+        }
+        #login{
+            width:100px;
+            height: 35px;
+            padding: 10px;
+            color:white;
+            border: none;
+            background-color: #45a049;
+            text-decoration: none;
+            border-radius: 10%;
+        }
+    </style>
+</head>
+<body>
+    <form id="registrationForm" onsubmit="return validateForm()">
+        <center><h2>Registration</h2></center>
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br>
+        <span id="usernameError" class="error"></span><br>
+        
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <span id="emailError" class="error"></span><br>
+        
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br>
+        <span id="passwordError" class="error"></span><br>
+        
+        <label for="confirmPassword">Confirm Password:</label><br>
+        <input type="password" id="confirmPassword" name="confirmPassword" required><br>
+        <span id="confirmPasswordError" class="error"></span><br>
+        <a href="./loginpage.html"><button id="submit">Register</button></a><br>
+    </form><br>
+    <center>
+        <span>Already have an account ? Click here to login </span><br><br>
+        <a href="./loginpage.html"><button id="login">Login</button></a>
+    </center>
+    <script>
+        // Function to validate form and store data in local storage
+        function validateForm() {
+            let username = document.getElementById('username').value.trim();
+            let email = document.getElementById('email').value.trim();
+            let password = document.getElementById('password').value;
+            let confirmPassword = document.getElementById('confirmPassword').value;
+
+            let isValid = true;
+
+            // Validate username
+            if (username === "") {
+                document.getElementById('usernameError').innerText = "Username is required";
+                isValid = false;
+            } else {
+                document.getElementById('usernameError').innerText = "";
+            }
+
+            // Validate email
+            if (email === "") {
+                document.getElementById('emailError').innerText = "Email is required";
+                isValid = false;
+            } else {
+                document.getElementById('emailError').innerText = "";
+            }
+
+            // Validate password
+            if (password === "") {
+                document.getElementById('passwordError').innerText = "Password is required";
+                isValid = false;
+            } else {
+                document.getElementById('passwordError').innerText = "";
+            }
+
+            // Validate confirm password
+            if (confirmPassword === "") {
+                document.getElementById('confirmPasswordError').innerText = "Please confirm password";
+                isValid = false;
+            } else if (confirmPassword !== password) {
+                document.getElementById('confirmPasswordError').innerText = "Passwords do not match";
+                isValid = false;
+            } else {
+                document.getElementById('confirmPasswordError').innerText = "";
+            }
+
+            // If all inputs are valid, store data in local storage
+            if (isValid) {
+                localStorage.setItem('username', username);
+                localStorage.setItem('email', email);
+                localStorage.setItem('password', password);
+                alert("Registration successful!");
+                // Optionally redirect to another page or clear the form
+                // window.location.href = 'dashboard.html';
+                // document.getElementById('registrationForm').reset();
+            }
+
+            return isValid;
+        }
+
+        // Populate form fields from local storage on page load (for demonstration)
+        window.onload = function() {
+            document.getElementById('username').value = localStorage.getItem('username') || '';
+            document.getElementById('email').value = localStorage.getItem('email') || '';
+            // You should not populate password fields for security reasons
+        }
+    </script>
+</body>
+</html>

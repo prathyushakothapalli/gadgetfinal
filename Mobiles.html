@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Cards</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            margin: 20px;
+            padding: 16px;
+            text-align: center;
+        }
+        .card img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .card h1 {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .card h2 {
+            font-size: 1em;
+            color: #555;
+            margin: 10px 0;
+        }
+        .card p {
+            font-size: 0.9em;
+            margin: 10px 0;
+        }
+        .card button {
+            background-color:green;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-bar">
+        <a href="./index.html"><h1 class="logo">Gadgets<span>Store</span></h1></a>
+        <ul>
+          <li><a href="./Home.html">Home</a></li>
+          <li><a href="#">Products</a>
+              <div class="dropdown-menu">
+                  <ul>
+                    <li><a href="./Airpods.html">Airpods</a></li>
+                    <li><a href="./Laptop.html">Laptops</a></li>
+                    <li><a href="./Speakers.html">Speakers</a></li>
+                    <li><a href="./Chargers&cables.html">Charger's & Cables</a></li>
+                    <li><a href="./Mobiles.html">Mobiles</a></li>
+                    <li><a href="./Smartwatches.html">SmartWatches</a></li>
+                  </ul>
+                </div>
+          </li>
+          <li><a href="./About us.html">About Us</a>
+          </li>
+          <li><a href="./Contact.html">Contact</a></li>
+          <li class="cart-icon">
+            <a href="./cart.html">
+                Cart
+                <span id="cart-count"></span>
+            </a>
+        </li>
+        </ul>
+      </div>><br><br><br><br><br><br>
+      <div class="container" id="product-container"></div>
+      <footer>
+        <div class="footer-content">
+          <p>Contact Us:</p>
+          <p>Email: info@gadgetstore.com</p>
+          <p>Phone: 9112299443</p>
+          <p>Address: GadgetStore, KPHB, Hyderabad</p>
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+          <p>Business Hours:</p>
+          <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+          <p>Saturday: 10:00 AM - 4:00 PM</p>
+          <p>Sunday: Closed</p>
+          <p>Map Location:</p>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d121775.76607000595!2d78.30648513972267!3d17.483979020108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3bcb91c13579d387%3A0xf2e4f2f9281873f8!2sK%20P%20H%20B%20Phase%209%2C%20Kukatpally%2C%20Hyderabad%2C%20Telangana%20500085!3m2!1d17.483995999999998!2d78.3888869!5e0!3m2!1sen!2sin!4v1711436592963!5m2!1sen!2sin" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <br><br>
+        </div>
+      </footer>
+    <script>
+      var api_data=[
+    {
+        "name": "OnePlus 12R",
+        "price": "39,999",
+        "image": "https://image01-in.oneplus.net/ebp/202401/16/1-m00-52-8d-cpgm7mwmajeaf_xoaapadatncrq404.png?x-amz-process=image/format,webp/quality,Q_80",
+        "brand": "OnePlus",
+        "color": "Black",
+        "model": "12R",
+        "weight": "195g",
+        "connectivity": "5G, 4G LTE, Wi-Fi, Bluetooth 5.2",
+        "description": "OnePlus 12R comes with a Snapdragon 8 Gen 1 processor, 120Hz Fluid AMOLED display, and a 5000mAh battery with 65W fast charging."
+    },
+    {
+        "name": "OnePlus Nord CE3",
+        "price": "24,999",
+        "image": "https://image01-in.oneplus.net/ebp/202306/25/1-m00-51-88-cpgm7wsykruahbobaardu7ablie779.png?x-amz-process=image/format,webp/quality,Q_80",
+        "brand": "OnePlus",
+        "color": "Blue",
+        "model": "Nord CE3",
+        "weight": "173g",
+        "connectivity": "5G, 4G LTE, Wi-Fi, Bluetooth 5.1",
+        "description": "OnePlus Nord CE3 features a Snapdragon 778G processor, 90Hz AMOLED display, and a 4500mAh battery with 30W fast charging."
+    },
+    {
+        "name": "OnePlus 11R 5G",
+        "price": "35,999",
+        "image": "https://image01-in.oneplus.net/ebp/202305/31/1-m00-51-66-cpgm7wr26omaegnzaaniaca13ya555.png?x-amz-process=image/format,webp/quality,Q_80",
+        "brand": "OnePlus",
+        "color": "Green",
+        "model": "11R 5G",
+        "weight": "197g",
+        "connectivity": "5G, 4G LTE, Wi-Fi, Bluetooth 5.3",
+        "description": "OnePlus 11R 5G is equipped with a Snapdragon 870 processor, 120Hz Fluid AMOLED display, and a 5000mAh battery with 65W fast charging."
+    },
+    {
+        "name": "OnePlus 10 Pro 5G",
+        "price": "66,999",
+        "image": "https://image01-in.oneplus.net/ebp/202207/11/1-m00-3c-e0-cpgm7wll9c2absdqaamvuvxwc5u151.png?x-amz-process=image/format,webp/quality,Q_80",
+        "brand": "OnePlus",
+        "color": "Emerald Green",
+        "model": "10 Pro 5G",
+        "weight": "200g",
+        "connectivity": "5G, 4G LTE, Wi-Fi, Bluetooth 5.2",
+        "description": "OnePlus 10 Pro 5G features a Snapdragon 888 processor, 120Hz Fluid AMOLED display, and a 5000mAh battery with 80W fast charging."
+    },
+    {
+        "name": "OnePlus Nord 3 5G",
+        "price": "28,999",
+        "image": "https://image01-in.oneplus.net/ebp/202306/25/1-m00-51-8b-cpgm7msykhmabcrnaai7ac0t8tq033.png?x-amz-process=image/format,webp/quality,Q_80",
+        "brand": "OnePlus",
+        "color": "Gray",
+        "model": "Nord 3 5G",
+        "weight": "190g",
+        "connectivity": "5G, 4G LTE, Wi-Fi, Bluetooth 5.1",
+        "description": "OnePlus Nord 3 5G comes with a Dimensity 1200-AI processor, 90Hz AMOLED display, and a 4500mAh battery with 65W fast charging."
+    },
+    {
+        "name": "Realme C67 5G",
+        "price": "15,999",
+        "image": "https://m.media-amazon.com/images/I/61B2t2Ul9zL._AC_UY436_FMwebp_QL65_.jpg",
+        "brand": "Realme",
+        "color": "Blue",
+        "model": "C67 5G",
+        "weight": "190g",
+        "connectivity": "5G, 4G LTE, Wi-Fi, Bluetooth 5.1",
+        "description": "Realme C67 5G is powered by a Dimensity 700 processor, 90Hz IPS LCD display, and a 5000mAh battery with 18W fast charging."
+    },
+    {
+        "name": "Realme Narzo 60 5G",
+        "price": "16,999",
+        "image": "https://m.media-amazon.com/images/I/8195A49fZbL._AC_UY436_FMwebp_QL65_.jpg",
+        "brand": "Realme",
+        "color": "Black",
+        "model": "Narzo 60 5G",
+        "weight": "185g",
+        "connectivity": "5G, 4G LTE, Wi-Fi, Bluetooth 5.2",
+        "description": "Realme Narzo 60 5G features a Dimensity 720 processor, 90Hz Super AMOLED display, and a 4500mAh battery with 33W fast charging."
+    },
+    {
+        "name": "Realme C7 5G",
+        "price": "17,999",
+        "image": "https://m.media-amazon.com/images/I/71Hu8jXCZLL._AC_UY436_FMwebp_QL65_.jpg",
+        "brand": "Realme",
+        "color": "Silver",
+        "model": "C7 5G",
+        "weight": "190g",
+        "connectivity": "5G, 4G LTE, Wi-Fi, Bluetooth 5.0",
+        "description": "Realme C7 5G is equipped with a Dimensity 800U processor, 90Hz IPS LCD display, and a 5000mAh battery with 18W fast charging."
+    },
+    {
+        "name": "Realme Narzo 60X 5G",
+        "price": "11,999",
+        "image": "https://m.media-amazon.com/images/I/818UhQ1kpdL._AC_UY436_FMwebp_QL65_.jpg",
+        "brand": "Realme",
+        "color": "Green",
+        "model": "Narzo 60X 5G",
+        "weight": "182g",
+        "connectivity": "5G, 4G LTE, Wi-Fi, Bluetooth 5.1",
+        "description": "Realme Narzo 60X 5G features a Dimensity 700 processor, 90Hz IPS LCD display, and a 5000mAh battery with 18W fast charging."
+    },
+    {
+        "name": "Realme Narzo N55",
+        "price": "25,999",
+        "image": "https://m.media-amazon.com/images/I/81ogvU1j6qL._AC_UY436_FMwebp_QL65_.jpg",
+        "brand": "Realme",
+        "color": "Yellow",
+        "model": "Narzo N55",
+        "weight": "193g",
+        "connectivity": "5G, 4G LTE, Wi-Fi, Bluetooth 5.2",
+        "description": "Realme Narzo N55 comes with a Dimensity 800U processor, 90Hz Super AMOLED display, and a 5000mAh battery with 30W fast charging."
+    }
+]
+        function createCard(product) 
+        {
+            for(i=0;i<api_data.length;i++)
+            {
+            var card = document.createElement('div');
+            card.className = 'card';
+
+            var img = document.createElement('img');
+            img.src = product.image;
+
+            var name = document.createElement('h1');
+            name.textContent = product.name;
+
+            var price = document.createElement('h2');
+            price.textContent = 'Price: ₹ ' + product.price;
+
+            var button = document.createElement('button');
+            button.textContent = 'See more';
+            
+
+            button.addEventListener('click', function() 
+            {
+                addToCart(product);
+            });
+
+            card.appendChild(img);
+            card.appendChild(name);
+            card.appendChild(price);
+            card.appendChild(button);
+
+            return card;
+        }
+    }
+
+        function addToCart(product) 
+        {
+            sessionStorage.setItem('cartProduct', JSON.stringify(product));
+            window.location.assign('airpodsgetapi.html');
+        }
+
+        var container = document.getElementById('product-container');
+        api_data.forEach(product => 
+        {
+            var card = createCard(product);
+            container.appendChild(card);
+        });
+        
+    </script>
+</body>
+</html>
